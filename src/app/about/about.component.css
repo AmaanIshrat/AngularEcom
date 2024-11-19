@@ -1,0 +1,104 @@
+/* about.component.css */
+
+/* Container with gradient background and rounded corners */
+.about-container {
+    background: linear-gradient(135deg, #b44a40, #a87b33); /* Gradient background */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+    
+    margin: 0 auto;
+  }
+  
+  /* Main title with bold and colorful text */
+  .about-container h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+  /* Descriptive text with slightly darker background */
+  .about-container p {
+    color: #fff;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    text-align: justify;
+  }
+  
+  /* Space between sections */
+  .about-container section {
+    margin-top: 30px;
+  }
+  
+  /* Section headers (mission and history) with bold color */
+  .mission h3,
+  .history h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+  
+  /* Paragraphs under sections with lighter text color */
+  .mission p,
+  .history p {
+    color: #f1f1f1;
+    font-size: 1rem;
+    margin-top: 10px;
+    line-height: 1.6;
+  }
+  
+  /* Add a subtle hover effect for text and links */
+  .mission h3:hover,
+  .history h3:hover {
+    color: #ff6f61;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  /* A button-like style for any calls to action or links */
+  .about-container a {
+    background-color: #ff6f61;
+    color: #ffffff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .about-container a:hover {
+    background-color: #fbb034;
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+  
+  /* Add some margin to the bottom of the container */
+  .about-container {
+    margin-bottom: 50px;
+  }
+  
+  /* Animations for the content */
+  .about-container h2, .mission h3, .history h3 {
+    animation: fadeIn 2s ease-out;
+  }
+  
+  /* Keyframe animation for fade-in effect */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

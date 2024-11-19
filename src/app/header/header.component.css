@@ -1,0 +1,29 @@
+/* navbar.component.css */
+.navbar {
+  padding: 0.5rem 1rem;
+  
+}
+
+.navbar .nav-link {
+  font-size: 1.1rem;
+}
+
+.navbar .nav-link:hover {
+  color: #007bff;
+}
+
+.navbar .navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.icon {
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-link {
+    font-size: 1rem;
+  }
+}

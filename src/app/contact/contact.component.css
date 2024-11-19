@@ -1,0 +1,84 @@
+/* Ensure content doesn't overlap fixed header */
+body {
+  margin: 0;
+  padding: 0; /* Reset padding */
+  padding-top: 80px; /* Adjust padding-top to prevent content from being hidden by fixed header */
+  min-height: 100vh; /* Ensure body takes full viewport height */
+}
+
+/* Center the form in the middle of the page */
+.contact-container {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for exact centering */
+  background-color: white; /* Background color */
+  padding: 2rem; /* Add padding */
+  border-radius: 10px; /* Smooth rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  max-width: 500px;
+  width: 100%; /* Ensure responsiveness */
+  margin-top: 0; /* No additional margin-top */
+  margin-bottom: 80px; /* Add margin for space between the bottom of the form and footer */
+}
+
+/* Form heading styling */
+.contact-container h2 {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #333333; /* Classic dark gray text */
+}
+
+/* Input fields and textarea */
+.contact-container input,
+.contact-container textarea {
+  width: 100%; /* Full width */
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* Focus effect for inputs */
+.contact-container input:focus,
+.contact-container textarea:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 5px rgba(37, 99, 235, 0.5);
+}
+
+/* Submit button styling */
+.contact-container button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #2563eb; /* Primary blue */
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for button */
+.contact-container button:hover {
+  background-color: #1d4ed8; /* Darker blue */
+}
+
+/* Disabled button styling */
+.contact-container button:disabled {
+  background-color: #a1a1aa; /* Gray for disabled state */
+  cursor: not-allowed; /* Indicate disabled button */
+}
+
+/* Success message styling */
+.contact-container .text-green-500 {
+  font-size: 1rem;
+  color: #16a34a; /* Bright green */
+  font-weight: bold;
+  margin-top: 1rem;
+}

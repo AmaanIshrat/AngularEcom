@@ -1,0 +1,65 @@
+<!-- home.component.html -->
+
+<div class="home-container">
+    <header class="hero-section">
+      <div class="hero-content">
+        <h1>Welcome to Our E-Commerce Store</h1>
+        <p>Explore our exclusive collection of products</p>
+        <a href="/shop" class="cta-button">Shop Now</a>
+      </div>
+    </header>
+  
+    <section class="featured-products">
+      <h2 class="section-title">Featured Products</h2>
+      <div class="products-container">
+        <div class="product-card" *ngFor="let product of featuredProducts">
+          <img [src]="product.image" alt="{{ product.name }}" />
+          <h3>{{ product.name }}</h3>
+          <p>{{ product.description }}</p>
+          <span class="price">Rs-{{ product.price }}</span>
+          <button class="btn-buy">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+  
+    <section class="categories">
+      <h2 class="section-title">Shop by Categories</h2>
+      <div class="category-cards">
+        <div class="category-card">
+          <img src="assets/images/category-1.jpg" alt="Men's Clothing" />
+          <h3>Men's Clothing</h3>
+        </div>
+        <div class="category-card">
+          <img src="assets/images/category-2.jpg" alt="Women's Clothing" />
+          <h3>Women's Clothing</h3>
+        </div>
+        <div class="category-card">
+          <img src="assets/images/category-3.jpg" alt="Accessories" />
+          <h3>Accessories</h3>
+        </div>
+      </div>
+    </section>
+  
+    <section class="testimonials">
+      <h2 class="section-title">What Our Customers Say</h2>
+      <div class="testimonial-cards">
+        <div class="testimonial-card">
+          <p>"This store is amazing! I found exactly what I was looking for."</p>
+          <p class="customer-name">- John Doe</p>
+        </div>
+        <div class="testimonial-card">
+          <p>"Great customer service and fast shipping. Highly recommend!"</p>
+          <p class="customer-name">- Jane Smith</p>
+        </div>
+      </div>
+    </section>
+  
+    <section class="newsletter">
+      <h2 class="section-title">Stay Updated!</h2>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit" class="cta-button">Subscribe</button>
+      </form>
+    </section>
+  </div>
+  

@@ -1,0 +1,18 @@
+/* Style for footer */
+footer {
+   
+    bottom: -100px; /* Initially hide the footer below the viewport */
+    left: 0;
+    width: 100%;
+   /* Footer background color */
+    color: rgb(27, 26, 26);
+    padding: 10px;
+    text-align: center;
+    transition: bottom 0.3s ease-in-out;
+  }
+  
+  /* Footer visible when scrolled to the bottom */
+  footer.show {
+    bottom: 0; /* Show footer when scrolled to the bottom */
+  }
+  
