@@ -1,0 +1,125 @@
+/* Styling for the grocery card elements */
+.card {
+    border-radius: 10px;
+   
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+   
+
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .card-body {
+    padding: 15px;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-size: 0.9rem;
+    color: #858484;
+  }
+  
+  /* Rating with stars */
+  .rating {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    color: #614e03;
+  }
+  
+  .rating .bi {
+    font-size: 1.2rem;
+    margin-right: 2px;
+  }
+  
+  /* Price Section (Discount Price) */
+  .price-section {
+    margin-top: 10px;
+  }
+  
+  .discount-price {
+    font-size: 1.1rem;
+    color: #28a745; /* Green for discounted price */
+  }
+  
+  .original-price {
+    font-size: 0.9rem;
+    color: #dc3545; /* Red for original price */
+  }
+  
+  .original-price .text-decoration-line-through {
+    text-decoration: line-through;
+  }
+  
+  /* Button styling */
+  .btn-primary {
+    background-color: #1c4169;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0473eb;
+  }
+  
+  /* Responsive grid layout with 4 items per row */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+  }
+  
+  .col-6.col-sm-6.col-md-3 {
+    flex: 0 0 24%;
+  }
+  
+  /* Ensure that for smaller screens (e.g., mobile), the items stack properly */
+  @media (max-width: 767px) {
+    .col-6.col-sm-6.col-md-3 {
+      flex: 0 0 48%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .col-6.col-sm-6.col-md-3 {
+      flex: 0 0 100%;
+    }
+  }
+
+  .filters-section {
+    background: linear-gradient(13deg, #4b5f7e, #e4effb);
+    padding: 10px;
+  }
+  
+  
+  
+  .filter-card button.active {
+    background-color: #197d96;
+    
+  }
+  
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .badge {
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  
+  

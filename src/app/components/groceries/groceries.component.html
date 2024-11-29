@@ -1,0 +1,128 @@
+<div class="container px-3 py-2 mt-3">
+  <!-- Title Section -->
+  <div class="text-center mb-4">
+    <h2 class="fw-bold text-primary display-5">🌟 Explore Fresh Groceries</h2>
+    <p class="text-muted fs-6">Find unbeatable deals on your daily essentials!</p>
+  </div>
+
+  <!-- Filters Section -->
+  <div class="filters-section p-3 rounded shadow-sm mb-4">
+    <div class="row g-3 align-items-center justify-content-center">
+      <!-- Price Filter -->
+      <div class="col-md-3">
+        <div class="filter-card p-2 rounded shadow-sm border">
+          <h6 class="fw-semibold mb-2">
+            <i class="bi bi-cash-coin text-success me-2"></i> Price Range
+          </h6>
+          <input
+            type="range"
+            class="form-range"
+            min="0"
+            max="200"
+            [(ngModel)]="priceRange"
+            (change)="applyFilters()"
+          />
+          <p class="mb-0 text-muted small">Up to <strong>Rs- {{ priceRange }}</strong></p>
+        </div>
+      </div>
+
+      <!-- Rating Filter -->
+      <div class="col-md-4">
+        <div class="filter-card p-2 rounded shadow-sm border">
+          <h6 class="fw-semibold mb-2">
+            <i class="bi bi-star-fill text-warning me-2"></i> Rating
+          </h6>
+          <div class="d-flex gap-2 flex-wrap">
+            <button
+              *ngFor="let rating of [5, 4, 3, 2, 1]"
+              class="btn btn-sm btn-outline-warning px-3 py-1 shadow-sm"
+              [class.active]="selectedRating === rating"
+              (click)="selectedRating = rating; applyFilters()"
+            >
+              {{ rating }} ⭐ & Up
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sort Filter -->
+      <div class="col-md-4">
+        <div class="filter-card p-2 rounded shadow-sm border">
+          <h6 class="fw-semibold mb-2">
+            <i class="bi bi-sort-alpha-down text-primary me-2"></i> Sort By Price
+          </h6>
+          <select
+            class="form-select form-select-sm shadow-sm"
+            [(ngModel)]="sortOrder"
+            (change)="applyFilters()"
+          >
+            <option value="lowToHigh">Low to High</option>
+            <option value="highToLow">High to Low</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Groceries Section -->
+  <div class="container px-2">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
+      <div
+        class="col"
+        *ngFor="let item of filteredGroceries"
+      >
+        <div class="card border-0 shadow-lg rounded-4 position-relative overflow-hidden">
+          <!-- Badge -->
+          <span
+            class="position-absolute top-0 start-0 badge bg-gradient-success text-white rounded-0 px-2 py-1"
+          >
+            {{ item.discount ? '🌟 Discount' : '🔥 Popular' }}
+          </span>
+
+          <!-- Product Image -->
+          <img
+            [src]="item.image"
+            alt="{{ item.name }}"
+            class="card-img-top"
+            style="height: 180px; object-fit: cover; border-bottom: 4px solid #0d6efd;"
+          />
+
+          <!-- Card Body -->
+          <div class="card-body d-flex flex-column justify-content-between bg-light p-2">
+            <h6 class="card-title fw-bold text-dark text-truncate mb-1">{{ item.name }}</h6>
+            <p class="text-muted small mb-1">{{ item.description }}</p>
+
+            <!-- Rating -->
+            <div class="rating d-flex align-items-center mb-2">
+              <span class="text-warning me-1" *ngFor="let star of [].constructor(item.rating)">
+                ★
+              </span>
+              <span class="text-muted me-1" *ngFor="let star of [].constructor(5 - item.rating)">
+                ★
+              </span>
+            </div>
+
+            <!-- Price Section -->
+            <div class="d-flex justify-content-between align-items-center mt-2">
+              <div>
+                <p class="mb-0 text-success fw-bold">Rs- {{ item.discountPrice }}</p>
+                <p
+                  class="mb-0 text-muted text-decoration-line-through"
+                  *ngIf="item.discount"
+                >
+                  Rs- {{ item.originalPrice }}
+                </p>
+              </div>
+              <button
+                class="btn btn-primary btn-sm rounded-pill shadow-sm"
+                (click)="addToCart(item)"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

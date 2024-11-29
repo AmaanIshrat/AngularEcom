@@ -15,4 +15,22 @@ footer {
   footer.show {
     bottom: 0; /* Show footer when scrolled to the bottom */
   }
+  .brand-text {
+    font-family: 'Pacifico', cursive; /* Stylish cursive font */
+    font-size: 1.8rem; /* Larger text size for emphasis */
+    font-weight: 400; /* Balanced weight */
+    color: #ff4a57; /* Vibrant color */
+    transform: rotate(-10deg); /* Tilted text at 20 degrees */
+    background: linear-gradient(90deg, #ff7eb3, #ff758c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Gradient text effect */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Adds depth */
+    letter-spacing: 0.1em; /* Subtle spacing for modern feel */
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+  }
+  
+  .brand-text:hover {
+    transform: rotate(-5deg) scale(1.1); /* Keep tilt but add zoom effect */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+  }
   

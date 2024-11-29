@@ -1,40 +1,58 @@
-<!-- navbar.component.html -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <!-- Logo (Left) -->
-    <a class="navbar-brand" routerLink="/home">
-      <img src="assets/images/logo.png" alt="Logo" class="logo" style="height: 40px;">
-    </a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm py-2">
+  <div class="container-fluid d-flex flex-column">
+    <!-- Top Section: Logo -->
+    <div class="d-flex justify-content-between align-items-center w-100">
+      <a class="navbar-brand d-flex align-items-center" routerLink="/home">
+        <span class="brand-text ms-2">Buy Now</span>
+      </a>
 
-    <!-- Navbar Toggler for Mobile -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <!-- Navbar Toggler for Mobile -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon">
+          
+        </span>
+      </button>
+    </div>
 
-    <!-- Navbar Links -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mx-auto">
+    <!-- Bottom Section: Navbar Links and Icons -->
+    <div class="collapse navbar-collapse justify-content-between align-items-end w-100" id="navbarNav">
+      <!-- Navbar Links -->
+      <ul class="navbar-nav mx-auto mb-0 mt-1">
         <li class="nav-item">
-          <a class="nav-link active" routerLink="/home">Home</a>
+          <a class="nav-link active px-3 text-uppercase" routerLink="/home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/about">About</a>
+          <a class="nav-link px-3 text-uppercase" routerLink="/about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/contact">Contact</a>
+          <a class="nav-link px-3 text-uppercase" routerLink="/contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3 text-uppercase" routerLink="/groceries">Groceries</a>
         </li>
       </ul>
 
       <!-- Right Side Icons (Cart and Login) -->
-      <div class="d-flex align-items-center">
+      <div class="d-flex align-items-center gap-4">
         <!-- Cart Icon -->
-        <a routerLink="/cart" class="nav-link">
-          <img src="assets/images/cart-icon.png" alt="Cart" class="icon" style="height: 25px;">
+        <a routerLink="/cart" class="nav-link position-relative icon-link">
+          <img src="assets/Images/Cart.png" alt="Cart" class="icon" style="height: 40px;">
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            3
+          </span>
         </a>
 
         <!-- Login Icon -->
-        <a routerLink="/login" class="nav-link">
-          <img src="assets/images/login-icon.png" alt="Login" class="icon" style="height: 25px;">
+        <a routerLink="/login" class="nav-link icon-link">
+          <img src="assets/Images/login.png" alt="Login" class="icon" style="height: 40px;">
         </a>
       </div>
     </div>
